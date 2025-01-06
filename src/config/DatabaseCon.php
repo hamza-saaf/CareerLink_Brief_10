@@ -1,22 +1,29 @@
 <?php
-class Database{  
+namespace App\Config;
 
-    $servername= "localhost";
-    $dbname="careerlink_db";
-    $username = "username";
-    $password = "";
 
-    try{
-        $db= new PDO("mysql:host=$localhost;dbname=careerlink_db",$username,$password);
-    
-    }
-    catch(PDOException $e){
-        echo "<p>Erreur:".$e->getMessage();
-        die();
-    
+use Dotenv\Dotenv;
+use PDO;
+use PDOException;
+
+class DatabaseCon{
+    private $conn;
+
+
+    public function connection()
+    {
+        $dotenv = Dotenv::createImmutable(__DIR__);
+        $dotenv->load();
+        try {
+            $this->conn = new PDO("mysql:host=".$_ENV["LOCALHOST"].";dbname=".$_ENV["DATABASE"],$_ENV["USER"],$_ENV["USER_PASSWORD"]);
+            return $this->conn;
+        } catch (PDOException $th) {
+            die("connection faild".$th->getMessage());
+        }
     }
 
 }
+
 
 
 ?>
