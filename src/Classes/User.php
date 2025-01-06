@@ -1,4 +1,7 @@
-<?php  
+<?php 
+
+namespace App\Classes;
+
 class User{
     protected string $name;
     protected string $email;
@@ -9,6 +12,9 @@ class User{
         $this->email=$email;
         $this->password=$password;
         
+    }
+    public function __toString() {
+        return "User:{$this->name}, Email: {$this->email}, Password:{$this->password }";
     }
     public function connecte(){
 

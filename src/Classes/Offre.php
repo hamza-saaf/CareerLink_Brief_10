@@ -1,4 +1,7 @@
 <?php 
+
+namespace App\Classes;
+
 class Offre{
     private int $id;
     private string $post;
