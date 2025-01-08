@@ -25,7 +25,7 @@
     <!-- Sidebar -->
     <div class="flex">
         <div class="w-64 bg-slate-400 text-black h-screen">
-            <img src="src/images/careerlink.svg" alt="CareerLinklogo">
+            <img src="../../images/careerlink.svg" alt="CareerLinklogo">
             <div class="p-4 text-xl font-bold text-white">CareerLink Admin</div>
             <nav class="mt-5 font-bold">
                 <a href="#" class="block py-2.5 px-4 rounded hover-bg-logo-color">Dashboard</a>
